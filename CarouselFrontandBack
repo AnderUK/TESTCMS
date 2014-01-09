@@ -1,0 +1,490 @@
+///////////////////////////Front End/////////////////////////////
+
+
+<%@ Master Language="VB" CodeFile="Master_Page.master.vb" Inherits="MasterPages_Master_Page" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title id="meta_title" runat="server"></title>
+    <meta name="description" content="" id="meta_description" runat="server" />
+    <meta name="keywords" content="" id="meta_keywords" runat="server" />
+    <!--Mobile Specific-->
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        var doc = document.documentElement;
+        doc.setAttribute('data-useragent', navigator.userAgent);
+    </script>
+    <link type="text/css" rel="stylesheet" href="/themes/shop4telecoms/styles/layout.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+    <link type="text/css" href="/controls/user_login/css/messi.css" rel="stylesheet" />
+    <script type="text/javascript" src="/controls/user_login/js/messi.js"></script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-19789611-3', 'shop4telecoms.co.uk');
+        ga('send', 'pageview');
+
+    </script>
+
+
+    <script type="text/javascript" language="javascript" src="/javaScript/ajax.js"></script>
+
+    <!-- Begin Cookie Consent-->
+    <script src="/scripts/cookieControl-5.1.min.js" type="text/javascript"></script>
+
+    <!--Icon top tab-->
+    <link rel="shortcut icon" href="/themes/shop4telecoms/images/favicon.ico" type="image/x-icon" />
+    <!-- End Cookie Consent plugin -->
+
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <asp:Literal ID="style_partners" runat="server"></asp:Literal>
+
+    <!-- RESPONSIVE STYLESHEET -- COMMENT TO DISABLE -->
+
+    <link type="text/css" rel="stylesheet" href="/themes/shop4telecoms/styles/responsive.css" />
+
+    <!-- END OF RESPONSIVE STYLESHEET -->
+
+    <!--NAVIGATION SCRIPT -->
+    <script type="text/javascript" src="/themes/shop4telecoms/js/jquery.flexnav.js"></script>
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager2" runat="server" />
+        <div class="page_container">
+
+            <div class="header">
+
+                <div class="top_banner">
+
+                    <div class="strapline">
+                        <p>The UK's Largest Supplier of Refurbished Telecoms Equipment</p>
+                    </div>
+                    <div class="call">
+                        <p><span class="yellow_text">Call:</span>0844 836 0011</p>
+                    </div>
+                </div>
+                <div class="basket">
+                    <h1>Shopping Basket</h1>
+                    <cms_cont:small_basket ID="basket_top" runat="server" />
+                </div>
+                <div class="menu-button">Menu</div>
+                <cms_cont:flexnav_menu id="nav" runat="server" page_id="0"></cms_cont:flexnav_menu>
+
+
+
+                <div class="logo">
+                    <a href="/">
+                        <img src="/themes/shop4telecoms/images/main_logo.png" alt="Shop4Telecoms" title="Shop4Telecoms - The UK's Largest Supplier of Refurbished Telecoms Equipment" /></a>
+                </div>
+
+                <!-- LOGIN SECTION -->
+                <div class="login">
+                    <cms_cont:user_login id="user_login" runat="server" show_prev_orders="True" redirect="True"></cms_cont:user_login>
+                </div>
+
+
+
+                <asp:ContentPlaceHolder ID="child" runat="server"></asp:ContentPlaceHolder>
+                <div class="footer">
+
+                    <div class="foot_text">
+                        <p><span class="call">Call Us Now:</span></p>
+                        <p><span class="phone">0844 836 0011</span></p>
+                    </div>
+                    <div class="sign_up">
+                        <p><span class="call">Newsletter Sign Up:</span></p>
+                        <cms_cont:newsletter_signup id="newsletter_signup" runat="server" page_id="12" redirect="True"></cms_cont:newsletter_signup>
+                    </div>
+
+                   <%-- <div class="connect">
+                        <p></p>
+                        <span class="call" id="phonehide">Connect:</span></p>
+                    <a href="">
+                    <img src="/themes/shop4telecoms/images/twit_logo.png" alt="Twitter" title="Shop4Telecoms Twitter" /></a>
+                        <a href="">
+                            <img src="/themes/shop4telecoms/images/face_logo.png" alt="Facebook" title="Shop4Telecoms Facebook" /></a>
+                        <a href="">
+                            <img src="/themes/shop4telecoms/images/In_logo.png" alt="Linkedin" title="Shop4Telecoms Linkedin" /></a>
+                    </div>--%>
+                
+                    
+                <div class="connect">
+                    <!-- AddThis Button BEGIN -->
+                    <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+                    <a class="addthis_button_facebook"></a>
+                    <a class="addthis_button_twitter"></a>
+                    <a class="addthis_button_google_plusone_share"></a> 
+                    </div>
+                    <script type="text/javascript">var addthis_config = { "data_track_addressbar": true };</script>
+                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b1c3141f0ed4e3"></script>
+                    <!-- AddThis Button END -->
+                </div>
+
+
+
+
+                    <div class="footer_links">
+                        <div class="footer_copyright">&copy; 2013 SHOP4TELECOMS</div>
+                        <cms_cont:treeview_list ID="treeview_support" runat="server" show_footer_links="True" visible="true" />
+                    </div>
+                    <span class="footer_poweredby">Powered by <a href="http://www.commsgroupcreative.com" target="_blank">Comms Group Creative</a></span>
+                    <div class="clearboth"></div>
+                </div>
+
+
+
+                <div class="clearright"></div>
+
+
+                <!-- NAVIGATION -->
+
+
+
+                <div class="flip">
+                    <!--slide navigation-->
+                </div>
+                <div class="panel">
+                    <cms_cont:dropdown_menu ID="dd_menu" runat="server" visible="true" />
+                </div>
+            </div>
+        </div>
+
+
+
+        <script>
+            $(".flexnav").flexNav();
+        </script>
+        <div class="clearboth"></div>
+
+
+
+    </form>
+    <div class="sage_pay_buttons">
+        <div class="sage_pay_inner">
+            <asp:ContentPlaceHolder ID="sagepay_area" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+
+
+    <script>
+
+        $(document).ready(function () {
+            $(".flip").click(function () {
+                $(".panel").slideToggle("fast");
+            });
+        });
+
+
+    </script>
+
+
+</body>
+</html>
+
+
+///////////////////////////Back End/////////////////////////////
+
+
+Partial Class controls_listings_sub_page_carousel
+    Inherits System.Web.UI.UserControl
+
+    Private _page_id As Integer = 1
+    Private _list_action As String = "page"
+    Private _fe As Boolean = True
+    Private _page_size As String = 25
+    Private _use_az As Boolean = False
+    Private _p_class_bottom As String = "p_bottom"
+    Private _p_class_top As String = "p_top"
+    Private _az_class As String = "az_div"
+    Private _img_height As Integer = 100
+    Private _img_width As Integer = 100
+    Private _img_class As String = ""
+    Private _show_price As Boolean = False
+    Private _show_vat As Boolean = False
+    Public Shared _view_txt As String = "View"
+    Public Shared _buy_txt As String = "Buy"
+    Private _show_view As Boolean = False
+    Private _show_buy As Boolean = False
+    Private _buy_type_enquire As Boolean = False
+    Private _enquire_form As String = "contact-us"
+    Private _show_pagination As Boolean = True
+    Private _rtrn_number As Integer = 0
+    Private _visible_number As Integer = 2
+    Public Shared fe_rtrn_number As String = ""
+    Private _show_filter As Boolean = False
+    Private _show_paging As Boolean = True
+
+    Public Property page_id() As Integer
+        Get
+            Return page_id
+        End Get
+        Set(ByVal value As Integer)
+            _page_id = value
+        End Set
+    End Property
+
+    Public Property fe() As Boolean
+        Get
+            Return fe
+        End Get
+        Set(ByVal value As Boolean)
+            _fe = value
+        End Set
+    End Property
+
+    Public Property list_action() As String
+        Get
+            Return list_action
+        End Get
+        Set(ByVal value As String)
+            _list_action = value
+        End Set
+    End Property
+
+    Public Property page_size() As String
+        Get
+            Return page_size
+        End Get
+        Set(ByVal value As String)
+            _page_size = value
+        End Set
+    End Property
+
+    Public Property use_az() As Boolean
+        Get
+            Return use_az
+        End Get
+        Set(ByVal value As Boolean)
+            _use_az = value
+        End Set
+    End Property
+
+    Public Property p_class_bottom() As String
+        Get
+            Return p_class_bottom
+        End Get
+        Set(ByVal value As String)
+            _p_class_bottom = value
+        End Set
+    End Property
+
+    Public Property p_class_top() As String
+        Get
+            Return p_class_top
+        End Get
+        Set(ByVal value As String)
+            _p_class_top = value
+        End Set
+    End Property
+
+    Public Property az_class() As String
+        Get
+            Return az_class
+        End Get
+        Set(ByVal value As String)
+            _az_class = value
+        End Set
+    End Property
+
+    Public Property img_height() As Integer
+        Get
+            Return img_height
+        End Get
+        Set(ByVal value As Integer)
+            _img_height = value
+        End Set
+    End Property
+
+    Public Property img_width() As Integer
+        Get
+            Return img_width
+        End Get
+        Set(ByVal value As Integer)
+            _img_width = value
+        End Set
+    End Property
+
+    Public Property img_class() As String
+        Get
+            Return img_class
+        End Get
+        Set(ByVal value As String)
+            _img_class = value
+        End Set
+    End Property
+
+    Public Property show_price() As Boolean
+        Get
+            Return show_price
+        End Get
+        Set(ByVal value As Boolean)
+            _show_price = value
+        End Set
+    End Property
+
+    Public Property show_vat() As Boolean
+        Get
+            Return show_vat
+        End Get
+        Set(ByVal value As Boolean)
+            _show_vat = value
+        End Set
+    End Property
+
+    Public Property view_txt() As String
+        Get
+            Return view_txt
+        End Get
+        Set(ByVal value As String)
+            _view_txt = value
+        End Set
+    End Property
+
+    Public Property buy_txt() As String
+        Get
+            Return buy_txt
+        End Get
+        Set(ByVal value As String)
+            _buy_txt = value
+        End Set
+    End Property
+
+    Public Property show_buy() As Boolean
+        Get
+            Return show_buy
+        End Get
+        Set(ByVal value As Boolean)
+            _show_buy = value
+        End Set
+    End Property
+
+    Public Property show_view() As Boolean
+        Get
+            Return show_view
+        End Get
+        Set(ByVal value As Boolean)
+            _show_view = value
+        End Set
+    End Property
+
+    Public Property buy_type_enquire() As Boolean
+        Get
+            Return buy_type_enquire
+        End Get
+        Set(ByVal value As Boolean)
+            _buy_type_enquire = value
+        End Set
+    End Property
+
+    Public Property enquire_form() As String
+        Get
+            Return enquire_form
+        End Get
+        Set(ByVal value As String)
+            _enquire_form = value
+        End Set
+    End Property
+
+    Public Property show_pagination() As Boolean
+        Get
+            Return show_pagination
+        End Get
+        Set(ByVal value As Boolean)
+            _show_pagination = value
+        End Set
+    End Property
+    Public Property rtrn_number() As Integer
+        Get
+            Return rtrn_number
+        End Get
+        Set(ByVal value As Integer)
+            _rtrn_number = value
+        End Set
+    End Property
+    Public Property visible_number() As Integer
+        Get
+            Return visible_number
+        End Get
+        Set(ByVal value As Integer)
+            _visible_number = value
+        End Set
+    End Property
+
+    Public Property show_filter() As Boolean
+        Get
+            Return show_filter
+        End Get
+        Set(ByVal value As Boolean)
+            _show_filter = value
+        End Set
+    End Property
+
+    Public Property show_paging() As Boolean
+        Get
+            Return show_paging
+        End Get
+        Set(ByVal value As Boolean)
+            _show_paging = value
+        End Set
+    End Property
+
+
+    Protected Sub Page_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+        fe_rtrn_number = _visible_number
+        category_carousel.page_id = _page_id
+        category_carousel.list_action = _list_action
+        category_carousel.fe = _fe
+        category_carousel.page_size = _page_size
+        category_carousel.use_az = _use_az
+        category_carousel.p_class_bottom = _p_class_bottom
+        category_carousel.p_class_top = _p_class_top
+        category_carousel.az_class = _az_class
+        category_carousel.img_height = _img_height
+        category_carousel.img_width = _img_width
+        category_carousel.img_class = _img_class
+        category_carousel.show_price = _show_price
+        category_carousel.show_vat = _show_vat
+        category_carousel.view_txt = _view_txt
+        category_carousel.buy_txt = _buy_txt
+        category_carousel.show_view = _show_view
+        category_carousel.show_buy = _show_buy
+        category_carousel.rtrn_number = _rtrn_number
+        category_carousel.show_paging = _show_paging
+        category_carousel.show_filter = _show_filter
+
+
+        Page.ClientScript.RegisterClientScriptBlock(Page.GetType, "carousel_fred", "<script src='/controls/listings/js/Carousel.js' type='text/javascript'></script>", False)
+
+
+        'category_carousel.buy_type_enquire = _buy_type_enquire
+        'category_carousel.enquire_form = _enquire_form
+        'category_carousel.show_pagination = _show_pagination
+
+    End Sub
+End Class
+
+
+
+
+
+
+
+
+
+
+
+
+
